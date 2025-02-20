@@ -120,8 +120,7 @@ def start_interface():
     root = tk.Tk()
     root.title("SendUrPackapp")
     root.geometry("1000x600")
-    root.iconbitmap("image/delivery-icon.ico")
-
+    
     container_frame = ttk.Frame(root)
     container_frame.pack(pady=25, padx=20)
 
