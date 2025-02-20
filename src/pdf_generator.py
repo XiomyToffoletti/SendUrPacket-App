@@ -12,7 +12,7 @@ class PDFGenerator:
         base_name = sender_name.replace(' ', '_')
 
         # Create folder to store labels if it doesn't exist.
-        destination_folder = 'Shiping Labels'
+        destination_folder = 'Shipping Labels'
         if not os.path.exists(destination_folder):
             os.makedirs(destination_folder)
 
@@ -31,7 +31,7 @@ class PDFGenerator:
         # Label design
         c = canvas.Canvas(pdf_file, pagesize=letter)
         
-        delivery_img = "images/delivery-img.png"
+        delivery_img = "src/images/delivery_img.png"
         c.drawImage(image=delivery_img, x=100, y=740, width=50, height=50, mask='auto')
         c.setFont("Helvetica-Bold", 14)
         c.drawString(100, 740, "SENDUrPack")
@@ -45,7 +45,7 @@ class PDFGenerator:
             c.drawString(120, y, f"{field}: {value}")
             y -= 20
         
-        scissor_img="images/scissor-img.png"
+        scissor_img="src/images/scissor_img.png"
         c.drawImage(image=scissor_img, x=10, y=423, width=20, height=20, mask='auto')
         c.drawString(25, 430, "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - ")
         
